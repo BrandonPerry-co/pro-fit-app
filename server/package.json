@@ -7,7 +7,7 @@
     "start:dev": "nodemon ./index.js",
     "start": "NODE_ENV=production node index.js"
   },
-  "author": "",
+  "author": "Brandon Perry",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
