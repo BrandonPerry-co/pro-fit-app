@@ -1,18 +1,20 @@
-const express = require('express')
+const router = require("express").Router();
 const usersController = require('../controllers/users')
 const { authenticate } = require('../middleware')
-const router = express.Router()
 
-router.get('/mealplan', usersController.getUserMealPlan)
+router.get("/books", usersController.getAllBooks)
 
-router.get('/workout', usersController.getUserWorkoutPlan)
 
-router.get('/:id', authenticate, usersController.getUserById)
+router.get("/mealplan", usersController.getUserMealPlan)
 
-router.post('/bodycomp', authenticate, usersController.createBodyComp)
+router.get("/workout", authenticate, usersController.getUserWorkoutPlan)
 
-router.put('/:id', authenticate, usersController.updateBodyCompById)
+router.get("/bodycomp/:id", authenticate, usersController.getUserById)
 
-router.delete('/:id', authenticate, usersController.deleteUserByUserName)
+router.post("/bodycomp", authenticate, usersController.createBodyComp)
+
+router.put("/bodycomp/:id", authenticate, usersController.updateBodyCompById)
+
+router.delete("/bodycomp/:id", authenticate, usersController.deleteUserByUserName)
 
 module.exports = router

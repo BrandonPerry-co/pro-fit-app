@@ -1,14 +1,18 @@
-.App {
+/* .App {
   display: flex;
   text-align: center;
   flex-direction: column;
+} */
+a{
+  background-color: transparent;
 }
 #form {
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-padding-top: 10px;
+padding: 20px;
+margin: 50px 0 ;
 }
 .form input {
  margin-top: 10px;
@@ -18,10 +22,6 @@ padding-top: 10px;
   margin-top: 10px;
   padding: 6px 30px;
   border-radius: solid 5px none;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 

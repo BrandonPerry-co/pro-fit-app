@@ -3,11 +3,12 @@ const pool = require('../sql/connection')
 const { handleSQLError } = require('../sql/error')
 
 const getUserMealPlan = (req, res) => {
-  pool.query("SELECT height, weight, age FROM employees21.body_comp", (err, rows) => {
-    if (err) return handleSQLError(res, err)
-    return res.send('heres a new meal plan!');
-  })
+  // pool.query("SELECT height, weight, age FROM employees21.body_comp WHERE id = ?", (err, rows) => {
+  //   if (err) return handleSQLError(res, err)
+   res.send('heres a new meal plan please follow the instructions!');
 }
+//   })
+// }
 
 const getUserWorkoutPlan = (req, res) => {
   pool.query("SELECT height, weight, age FROM employees21.body_comp", (err, rows) => {
@@ -58,11 +59,16 @@ const deleteUserByUserName = (req, res) => {
   })
 }
 
+const getAllBooks = (req, res) => {
+  return res.send('heres a new meal plan!');
+}
+
 module.exports = {
   getUserWorkoutPlan, 
   getUserMealPlan,
   getUserById,
   createBodyComp,
   updateBodyCompById,
-  deleteUserByUserName
+  deleteUserByUserName, 
+  getAllBooks
 }
