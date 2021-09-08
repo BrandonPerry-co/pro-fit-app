@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Fitness app project",
   "main": "index.js",
+  "homepage": ".",
   "scripts": {
-    "start:dev": "nodemon ./index.js",
-    "start": "NODE_ENV=production node index.js"
+    "start:dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Brandon Perry",
   "license": "ISC",

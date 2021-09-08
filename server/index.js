@@ -7,13 +7,13 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
-const checkAuth = require("../server/JWT");
-const authenticate = require("../server/middleware");
+
 require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 4001;
 
+app.use(express.static("public"));
 app.use(express.json());
 app.use(
   cors({
@@ -57,6 +57,8 @@ app.post("/register", (req, res) => {
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
       console.log(err);
+    } else {
+      res.send("You have successfully completed registration!")
     }
 
     db.query(
@@ -132,11 +134,11 @@ app.post("/login", (req, res) => {
   );
 });
 
-app.get("/mealplan", checkAuth, (req, res) => {
+app.get("/mealplan", (req, res) => {
   res.send("heres a new meal plan!");
 });
 
-app.get("/workout", (req, res) => {
+app.get("/workout", verifyJWT, (req, res) => {
   res.send("Heres a new workout hope you enjoy");
 });
 

@@ -15,7 +15,7 @@ function BodyComp() {
   const [bodyCompList, setBodyCompList] = useState([]);
 
 const addBodyComp = () => {
-  axios.post('http://localhost:4001/create', {
+  axios.post('https://v1-profitapp.herokuapp.com/create', {
     weight: weight, 
     height: height, 
     age: age, 
@@ -34,13 +34,13 @@ const addBodyComp = () => {
 };
 
 const getBodyComp = () =>{
-  axios.get('http://localhost:4001/bodycomp').then((response) => {
+  axios.get('https://v1-profitapp.herokuapp.com/bodycomp').then((response) => {
      setBodyCompList(response.data)
    });
 }
 
 const updateBodyComp = (id) =>{
-  axios.put('http://localhost:4001/update',{weight: newWeight, id: id})
+  axios.put('https://v1-profitapp.herokuapp.com/update',{weight: newWeight, id: id})
   .then((response) => {
      alert("Your Body Composition was updated!")
      setBodyCompList(bodyCompList.map((val)=> {
@@ -50,7 +50,7 @@ const updateBodyComp = (id) =>{
 }
 
 const deleteBodyComp = (id) =>{
-  axios.delete(`http://localhost:4001/delete/${id}`)
+  axios.delete(`https://v1-profitapp.herokuapp.com/delete/${id}`)
   .then((response) => {
      alert("Your Body Composition was Deleted!")
      setBodyCompList(bodyCompList.filter((val)=> {
