@@ -7,7 +7,7 @@ And they want to know how to calculate their body fat percentage. The good news 
 
 # Who will interact with the App
 
- Anyone that wants to improve on their health. In the future fitness trainers and gym, owners would encourage their members and 
+ Anyone that wants to improve their health. In the future fitness trainers and gym owners would encourage their members and 
  clients to use the app.  
 
 # Core functionality
